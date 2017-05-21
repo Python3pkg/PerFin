@@ -171,7 +171,7 @@ class Portfolio:
 
         else:
             # convert the prices to a _dataframe for easy processing
-            shares_prices = pd.DataFrame([prices.values()], columns=prices.keys())
+            shares_prices = pd.DataFrame([list(prices.values())], columns=list(prices.keys()))
             shares_values = shares_sums * shares_prices
             shares_totalvalue = shares_values.sum(axis=1)
 
@@ -190,7 +190,7 @@ class Portfolio:
             'TOTAL' column with the portfolio value.
         """
         shares_sums = self._dataframe.sum(axis=0)
-        shares_prices = pd.DataFrame([prices.values()], columns=prices.keys())
+        shares_prices = pd.DataFrame([list(prices.values())], columns=list(prices.keys()))
 
         shares_values = shares_sums * shares_prices
         shares_values['TOTAL'] = shares_values.sum(axis=1)

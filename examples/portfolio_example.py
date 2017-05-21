@@ -21,10 +21,10 @@ def main():
     prices = {'APPL': 100.32, 'IBM': 171.03}
 
     weights = portfolio.get_weights(weight_by='value', prices=prices)
-    print('weights', weights)
+    print(('weights', weights))
 
     values = portfolio.get_current_value(prices)
-    print('values', values)
+    print(('values', values))
 
 
 if __name__ == '__main__':
